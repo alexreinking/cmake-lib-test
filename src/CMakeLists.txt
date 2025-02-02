@@ -1,19 +1,19 @@
-add_library(${NAME} STATIC)
+add_library(mylib STATIC)
 
-target_sources(${NAME}
+target_sources(mylib
     PRIVATE
         hello.cc
 )
 
-target_include_directories(${NAME}
+target_include_directories(mylib
     PRIVATE
         ${CMAKE_CURRENT_LIST_DIR})
 
-target_link_libraries(${NAME}
+target_link_libraries(mylib
     PRIVATE
         proto-objects
         protobuf::libprotobuf)
 
-set_target_properties(${NAME} PROPERTIES PUBLIC_HEADER "hello.hh")
+set_target_properties(mylib PROPERTIES PUBLIC_HEADER "hello.hh")
 
-install(TARGETS ${NAME})
+install(TARGETS mylib)

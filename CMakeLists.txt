@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.31)
 
-set(NAME mylib)
-
 include(FetchContent)
 FetchContent_Declare(vcpkg
                      GIT_REPOSITORY https://github.com/microsoft/vcpkg/
@@ -11,7 +9,7 @@ FetchContent_MakeAvailable(vcpkg)
 
 set(CMAKE_TOOLCHAIN_FILE "${vcpkg_SOURCE_DIR}/scripts/buildsystems/vcpkg.cmake" CACHE FILEPATH "")
 
-project(${NAME}
+project(mylib
     VERSION 0.1.0
     DESCRIPTION "MyLib test"
     LANGUAGES C CXX
