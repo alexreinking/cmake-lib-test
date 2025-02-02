@@ -1,13 +1,19 @@
 cmake_minimum_required(VERSION 3.31)
 
-include(FetchContent)
-FetchContent_Declare(vcpkg
-                     GIT_REPOSITORY https://github.com/microsoft/vcpkg/
-                     GIT_TAG 2025.01.13
-)
-FetchContent_MakeAvailable(vcpkg)
+option(mylib_FETCH_VCPKG "When enabled, set up vcpkg using FetchContent" ON)
 
-set(CMAKE_TOOLCHAIN_FILE "${vcpkg_SOURCE_DIR}/scripts/buildsystems/vcpkg.cmake" CACHE FILEPATH "")
+if (mylib_FETCH_VCPKG)
+    include(FetchContent)
+    FetchContent_Declare(
+        vcpkg
+        GIT_REPOSITORY https://github.com/microsoft/vcpkg/
+        GIT_TAG 2025.01.13
+    )
+    FetchContent_MakeAvailable(vcpkg)
+
+    set(CMAKE_TOOLCHAIN_FILE "${vcpkg_SOURCE_DIR}/scripts/buildsystems/vcpkg.cmake"
+        CACHE FILEPATH "")
+endif ()
 
 project(mylib
     VERSION 0.1.0
