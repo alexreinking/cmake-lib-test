@@ -31,18 +31,15 @@ endif ()
 find_package(Protobuf REQUIRED)
 find_package(CGAL REQUIRED)
 
-set(PROTO_DIR "${PROJECT_SOURCE_DIR}/proto")
 set(PROTO_BINARY_DIR "${CMAKE_CURRENT_BINARY_DIR}/generated")
 
-add_library(proto-objects OBJECT "${PROTO_DIR}/hello.proto")
-
+add_library(proto-objects OBJECT proto/hello.proto)
 target_link_libraries(proto-objects PUBLIC protobuf::libprotobuf)
 target_include_directories(proto-objects PUBLIC "$<BUILD_INTERFACE:${PROTO_BINARY_DIR}>")
 
 protobuf_generate(
     TARGET proto-objects
-    IMPORT_DIRS "${PROTO_DIR}"
-    PROTOC_OUT_DIR "${PROTO_BINARY_DIR}")
-
-
+    IMPORT_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/proto"
+    PROTOC_OUT_DIR "${PROTO_BINARY_DIR}"
+)
 add_subdirectory(src)
