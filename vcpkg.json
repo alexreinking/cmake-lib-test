@@ -1,0 +1,7 @@
+{
+    "name": "mylib",
+    "dependencies": [
+        "cgal",
+        "protobuf"
+    ]
+}
