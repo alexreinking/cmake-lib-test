@@ -24,12 +24,10 @@ project(
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 23)
 
-set(CMAKE_CXX_FLAGS "/utf-8")
-set(CMAKE_C_FLAGS "/utf-8")
-
 if (MSVC)
+    add_compile_options(/utf-8)
     set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDLL")
-endif()
+endif ()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
