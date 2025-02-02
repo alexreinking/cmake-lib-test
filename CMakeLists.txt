@@ -28,8 +28,6 @@ if (MSVC)
     add_compile_options(/utf-8)
 endif ()
 
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
 find_package(Protobuf CONFIG REQUIRED)
 
 set(PROTO_DIR "${CMAKE_SOURCE_DIR}/proto")
