@@ -6,8 +6,8 @@ if (mylib_FETCH_VCPKG)
     include(FetchContent)
     FetchContent_Declare(
         vcpkg
-        GIT_REPOSITORY https://github.com/microsoft/vcpkg/
-        GIT_TAG 2025.01.13
+        GIT_REPOSITORY https://github.com/microsoft/vcpkg.git
+        GIT_TAG 6f29f12e82a8293156836ad81cc9bf5af41fe836  # 2025.01.13
     )
     FetchContent_MakeAvailable(vcpkg)
 
