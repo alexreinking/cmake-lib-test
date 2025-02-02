@@ -30,7 +30,7 @@ endif ()
 
 find_package(Protobuf CONFIG REQUIRED)
 
-set(PROTO_DIR "${CMAKE_SOURCE_DIR}/proto")
+set(PROTO_DIR "${PROJECT_SOURCE_DIR}/proto")
 set(PROTO_BINARY_DIR "${CMAKE_CURRENT_BINARY_DIR}/generated")
 
 add_library(proto-objects OBJECT "${PROTO_DIR}/hello.proto")
