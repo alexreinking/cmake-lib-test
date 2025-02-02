@@ -26,7 +26,6 @@ set(CMAKE_CXX_STANDARD 23)
 
 if (MSVC)
     add_compile_options(/utf-8)
-    set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreadedDLL")
 endif ()
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
