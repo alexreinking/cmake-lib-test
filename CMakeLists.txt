@@ -28,7 +28,8 @@ if (MSVC)
     add_compile_options(/utf-8)
 endif ()
 
-find_package(Protobuf CONFIG REQUIRED)
+find_package(Protobuf REQUIRED)
+find_package(CGAL REQUIRED)
 
 set(PROTO_DIR "${PROJECT_SOURCE_DIR}/proto")
 set(PROTO_BINARY_DIR "${CMAKE_CURRENT_BINARY_DIR}/generated")
@@ -43,6 +44,5 @@ protobuf_generate(
     IMPORT_DIRS "${PROTO_DIR}"
     PROTOC_OUT_DIR "${PROTO_BINARY_DIR}")
 
-find_package(CGAL CONFIG REQUIRED)
 
 add_subdirectory(src)
