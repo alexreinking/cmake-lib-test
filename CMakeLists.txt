@@ -6,7 +6,7 @@ include(FetchContent)
 include(${CMAKE_SOURCE_DIR}/cmake/vcpkg.cmake)
 
 project(${NAME}
-    VERSION 0.0.1
+    VERSION 0.1.0
     DESCRIPTION "MyLib test"
     LANGUAGES C CXX
 )
