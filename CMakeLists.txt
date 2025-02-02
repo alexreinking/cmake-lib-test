@@ -33,12 +33,14 @@ find_package(CGAL REQUIRED)
 
 set(PROTO_BINARY_DIR "${CMAKE_CURRENT_BINARY_DIR}/generated")
 
-add_library(proto-objects OBJECT proto/hello.proto)
-target_link_libraries(proto-objects PUBLIC protobuf::libprotobuf)
-target_include_directories(proto-objects PUBLIC "$<BUILD_INTERFACE:${PROTO_BINARY_DIR}>")
+add_library(mylib_protos OBJECT proto/hello.proto)
+add_library(mylib::protos ALIAS mylib_protos)
+
+target_link_libraries(mylib_protos PUBLIC protobuf::libprotobuf)
+target_include_directories(mylib_protos PUBLIC "$<BUILD_INTERFACE:${PROTO_BINARY_DIR}>")
 
 protobuf_generate(
-    TARGET proto-objects
+    TARGET mylib_protos
     IMPORT_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/proto"
     PROTOC_OUT_DIR "${PROTO_BINARY_DIR}"
 )
