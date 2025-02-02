@@ -1,7 +1,8 @@
 {
-    "name": "mylib",
-    "dependencies": [
-        "cgal",
-        "protobuf"
-    ]
+  "name": "mylib",
+  "version-semver": "0.1.0",
+  "dependencies": [
+    "cgal",
+    "protobuf"
+  ]
 }
