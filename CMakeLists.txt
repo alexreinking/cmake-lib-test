@@ -15,10 +15,10 @@ if (mylib_FETCH_VCPKG)
         CACHE FILEPATH "")
 endif ()
 
-project(mylib
+project(
+    mylib
     VERSION 0.1.0
     DESCRIPTION "MyLib test"
-    LANGUAGES C CXX
 )
 
 set(CMAKE_C_STANDARD 11)
